@@ -19,6 +19,9 @@ export class ProductDetailsComponent implements OnInit {
 ngOnInit() {
   this.route.paramMap.subscribe(params => {
     //https://angular-ug9uks-y4jget.stackblitz.io/products/0  <---- this get the id parameters
+    // dichiarato in app.module.ts -> RouterModule.forRoot([
+    // { path: 'products/:productId', component: ProductDetailsComponent },
+ 
     console.log(params.get('productId'));
     this.product = products[+params.get('productId')];
   });
