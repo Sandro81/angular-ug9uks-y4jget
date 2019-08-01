@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { CartService } from '../cart.service';
+import { Injectable } from '@angular/core';
+
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-cart',
@@ -10,9 +13,9 @@ import { CartService } from '../cart.service';
 export class CartComponent {
   items;
 
-  constructor(
-    private cartService: CartService
-  ) {
-    this.items = this.cartService.getItems();
-  }
+ constructor(
+    private http: HttpClient
+  ) {}
+
+  
 }
