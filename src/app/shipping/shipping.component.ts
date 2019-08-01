@@ -6,11 +6,12 @@ import { CartService } from '../cart.service';
   templateUrl: './shipping.component.html',
   styleUrls: ['./shipping.component.css']
 })
-export class ShippingComponent implements OnInit {
+export class ShippingComponent {
+  shippingCosts;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(
+    private cartService: CartService
+  ) {
+    this.shippingCosts = this.cartService.getShippingPrices();
   }
-
 }
